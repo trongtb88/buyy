@@ -1,2 +1,2 @@
 # buyy
-Project using Microservice System Architecture + Docker
+Project e-commerce using Microservice System Architecture + Docker
