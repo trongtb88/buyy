@@ -1,0 +1,37 @@
+#notice the use of profiles one for localhost, one for docker
+server:
+  port: 1111
+  
+eureka:
+  instance:
+    hostname: localhost         #${discovery.hostname:localhost}
+  client:  # Not a client, don't register with yourself
+    registerWithEureka: false
+    fetchRegistry: false  
+  
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"  
+
+---
+
+spring:
+  profiles: dev
+  application:
+     name: discovery-service
+  thymeleaf:
+    enabled: false
+        
+
+---
+
+spring:
+  profiles: docker
+  application:
+     name: discovery-service
+  thymeleaf:
+    enabled: false
+    
+
