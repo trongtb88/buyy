@@ -1,6 +1,6 @@
 FROM java:8-jre
 
-MAINTAINER Hitesh Joshi achiever.hitesh@gmail.com
+MAINTAINER trongtb1988@gmail.com
 
 VOLUME [ "/data" ]
 
