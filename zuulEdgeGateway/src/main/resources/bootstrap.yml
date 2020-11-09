@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: "dev"
+  application:
+    name: zuulgateway 
+encrypt:
+  failOnError: false
+    
+---    
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://localhost:5555
+      enabled: true 
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config:5555
+      enabled: true 
+    
