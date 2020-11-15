@@ -1,0 +1,59 @@
+#notice the use of profiles one for localhost, one for docker
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"  
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  zipkin:
+    base-url: http://localhost:9411/ 
+  sleuth:
+    sampler:
+      percentage: 0.4
+    zuul:
+      enabled: true  
+eureka:
+   instance:
+       leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+       preferIpAddress: true 
+  
+server:
+  port: ${invoice.port}  
+        
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/buyy_invoice
+    username: root
+    password: 1234567890
+  jpa:
+    hibernate:
+      ddl-auto: none    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:${invoice.discovery.port}/eureka/ # using eureka instead of localhost
+
+
+    
+---
+
+spring:
+  profiles: docker
+  datasource:   #docker instance of mysql
+    url: jdbc:mysql://localhost:32768/microservices_invoice
+    username: root
+    password: test 
+  jpa:
+    hibernate:
+      ddl-auto: none        
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:${invoice.discovery.port}/eureka/ # using eureka instead of localhost
+
+    
