@@ -1,4 +1,4 @@
-package com.dragon88.microservices.customer.swaggerconfig;
+package com.dragon88.microservices.inventory.swaggerconfig;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -22,9 +22,9 @@ public class SwaggerConfig {
 
         return new Docket(DocumentationType.SWAGGER_2)
                         .select()
-                        .apis(RequestHandlerSelectors.basePackage("com.dragon88.microservices.customer"))
+                        .apis(RequestHandlerSelectors.basePackage("com.dragon88.microservices.inventory"))
                         .paths(PathSelectors.any())
-                        .build().apiInfo(new ApiInfo("Customer Service Api Documentation",
+                        .build().apiInfo(new ApiInfo("Inventory Service Api Documentation",
                         		"Documentation generated via Swagger", 
                         		"1.0.0",null, new Contact("Trong Tran", "https://www.linkedin.com/in/trong-tran-81b84580/", "trongtb1988@gmail.com"), null,null));
     }

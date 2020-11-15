@@ -1,6 +1,6 @@
 # Microservics Architecture
 
-###  written by Hitesh Joshi - sendmailtojoshi@gmail.com
+###  written by Trong Tran - trongtb1988@gmail.com
 
 
 This is proof of concept application where I am trying to build a very basic Shopping cart using microservices, the main intent is to setup microservices properly.

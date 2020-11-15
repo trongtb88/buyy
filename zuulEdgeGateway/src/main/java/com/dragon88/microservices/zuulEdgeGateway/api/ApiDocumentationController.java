@@ -12,7 +12,7 @@ import springfox.documentation.swagger.web.SwaggerResource;
 import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 
 /**
- * @author hitjoshi
+ * @author dragon
  *
  */
 @Component
